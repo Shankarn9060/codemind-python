@@ -1,24 +1,26 @@
-n=int(input())
-v=0
-p=0
-m=0
-for i in range(1,n+1,1):
-    if(n%i==0):
-        v+=1
-if(v!=2):
-    print('Not Mega Prime')
-else:
-    while(n>0):
-        k=0
-        r=n%10
-        for j in range(1,r+1,1):
-            if(r%j==0):
-                k+=1
-        if(k==2):
-            m+=1
-        n=n//10
-        p+=1
-    if(p==m):
-       print('Mega Prime')
+def prime(a):
+    c=0
+    for i in range(1,a+1):
+        if a%i==0:
+            c+=1
+    if c==2:
+        return 1
     else:
-       print('Not Mega Prime')
+        return 0
+a=int(input())
+if prime(a)==1:
+    flag=0
+    while a>0:
+        rem=a%10
+        if prime(rem)==1:
+            flag=1
+            a//=10
+        else:
+            flag=0
+            break
+    if flag==1:
+        print("Mega Prime")
+    else:
+        print("Not Mega Prime")
+else:
+    print("Not Mega Prime")
