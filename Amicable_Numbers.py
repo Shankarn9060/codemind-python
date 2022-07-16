@@ -1,14 +1,12 @@
-v=int(input())
-k=int(input())
-a=0 
-for i in range(1,(v//2)+1,1):
-    if(v%i==0):
-        a+=i
-b=0
-for i in range(1,(k//2)+1,1):
-    if(k%i==0):
-        b+=i
-if(a==k and b==v):
-    print('Amicable')
+def sod(a):
+    su=0
+    for i in range(1,a):
+        if a%i==0:
+            su+=i
+    return su
+a=int(input())
+b=int(input())
+if sod(a)==b and sod(b)==a:
+    print("Amicable")
 else:
-    print('Not Amicable')
+    print("Not Amicable")
