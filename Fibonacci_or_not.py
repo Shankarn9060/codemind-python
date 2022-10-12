@@ -1,15 +1,18 @@
-n=int(input())
-n1=0
-n2=1
-n3=2
-j=0
-for i in range(1,n+1,1):
-    n3=n1+n2
-    n1=n2
-    n2=n3
-    if(n3==n):
-        j=j+1
-if(j==0):
-    print('False')
+a=int(input())
+fa=0
+fb=1
+fn=fa+fb
+c=0
+for i in range(100):
+    if fa==a:
+        c=1
+        break
+    else:
+        fn=fa+fb
+        fa=fb
+        fb=fn
+        continue
+if c==1:
+    print("True")
 else:
-    print('True')
+    print("False")
